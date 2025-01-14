@@ -13,7 +13,7 @@ class Program
     const String EXIT_COMMAND = "x";
 
 
-    static ChetchXMPPConnection cnn;
+    static ChetchXMPPConnection? cnn;
     static String target = TARGET;
     
     static void ConnectClient()
