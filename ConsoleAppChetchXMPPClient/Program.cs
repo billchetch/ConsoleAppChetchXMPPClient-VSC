@@ -8,8 +8,9 @@ class Program
 {
     const String USERNAME = "mactest@openfire.bb.lan";
     const String PASSWORD = "mactest";
-    //const String TARGET = "bbalarms.service@openfire.bb.lan";
-    const String TARGET = "bbengineroom.service@openfire.bb.lan";
+    const String TARGET = "bbalarms.service@openfire.bb.lan";
+    //const String TARGET = "admtest.service@openfire.bb.lan";
+    //const String TARGET = "gps.service@openfire.bb.lan";
     const String EXIT_COMMAND = "x";
 
 
@@ -108,6 +109,19 @@ class Program
             ConnectClient();
 
             Console.WriteLine("Yewwww connected!");
+
+            /*ConsoleHelper.PK("Press a key to subscribe...");
+            var msg = new Message(MessageType.SUBSCRIBE);
+            msg.Target = target;
+            cnn.SendMessageAsync(msg);*/
+
+            for(int i = 0; i < 5; i++){
+                ConsoleHelper.PK("Press a key to test iv...");
+                SendCommand("test-alarm iv 4 5000");
+                ConsoleHelper.PK("Press a key to test gs...");
+                SendCommand("test-alarm gs 6 1000");
+            }
+            //SendCommand("position");
 
             ConsoleHelper.PK("Press a key to end...");
         } 
